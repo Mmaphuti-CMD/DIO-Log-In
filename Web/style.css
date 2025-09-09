@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: gray;
+}
+
+a{
+    text-decoration: none;
+  
+}
+form {
+  max-width: 500px;
+  background: lightgray;
+  border-radius: 2px;
+  padding: 3rem;
+  box-sizing: border-box;
+  border-radius: 3px;
+  height: 0%;
+  margin-top: 7%;
+  margin-left: auto;
+  margin-right: auto;
+}
+form h1{
+    text-align: center;
+    margin-bottom: 35px;
+    background: transparent;
+}
+
+form button {
+    margin-top: 12px;
+    
+  }
+button.rounded {
+    background: gray;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    width: 80%;
+    border-radius: 5px;
+    padding: 10px 30px;
+    line-height: 1.5;
+    cursor: pointer;
+    margin-left: 35px;
+  }
+
+ button.register {
+    background: gray;
+    border: none;
+    font-size: 0.95rem;
+    width: 35%;
+    border-radius: 5px;
+    margin-right: 5%;
+    padding: 2px;
+    line-height: 1.5;
+    cursor: pointer;
+    margin-left: 110px;
+  }
+  button.register a{
+    color: black;
+  }
+  
+  .i{
+    margin: auto;
+  }
+  form input{
+    display: inline-block;
+    margin: 8px;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid blue;
+    font-size: 20px;
+    margin-left: 35px;
+
+  }
+  p{
+    margin-left: 180px;
+  }
+  hr{
+    width: 80%;
+    margin-left: 35px;
+  }
+  
