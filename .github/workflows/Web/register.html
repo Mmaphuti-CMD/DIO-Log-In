@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIO Registration</title>
+
+    <link rel="stylesheet" href="register.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <form>
+      <a href="index.html">Back</a>
+      <h1>DIO REGISTER</h1>
+
+      <label for="name">Full Name:</label>
+
+      <input
+        type="text"
+        id="full name"
+        placeholder="Enter your full name"
+        required
+      />
+
+      <label for="email" style="margin-right: 38px">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required />
+
+      <label for="stream" style="margin-right: 25px">Subject:</label>
+      <input type="text" id="Subject" placeholder="Enter subject" required />
+
+      <label for="contact number" style="margin-right: 23px">Contact:</label>
+      <input
+        type="digit"
+        id="contact"
+        placeholder="Enter your contact number"
+        required
+      />
+
+      <div class="erros">
+        <ul>
+          <li id="length">Must be atleast 8 characters long</li>
+          <li id="upper">Must have atleast one uppercase</li>
+          <li id="lower">Must have atleast one lowercase</li>
+          <li id="special_char">Must have a special character</li>
+          <li id="number">Must have a digit</li>
+        </ul>
+      </div>
+
+      <i
+        class="far fa-eye"
+        id="togglePassword"
+        style="
+          margin-top: 8px;
+          float: inline-end;
+          background: white;
+          height: 27px;
+          width: 5%;
+          cursor: pointer;
+        "
+      ></i>
+      <label for="password" style="margin-top: 5px">Create Password: </label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        required
+        id="password"
+        style="width: 56%"
+        onkeyup="return validate()"
+      />
+
+      <label for="confirm password" style="margin-top: 5px"
+        >Confirm Password:
+      </label>
+      <input
+        type="password"
+        id="conpassword"
+        style="width: 52%; margin-top: 2px"
+        placeholder="Confirm Password"
+        required
+        oninput="return confirm()"
+      />
+
+      <br />
+      <button class="rounded">SUBMIT</button>
+    </form>
+
+    <script>
+      //Show password
+      const togglePassword = document.querySelector("#togglePassword");
+      const password = document.querySelector("#password");
+
+      togglePassword.addEventListener("click", function (e) {
+        // toggle the type attribute
+        const type =
+          password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        // toggle the eye slash icon
+        this.classList.toggle("fa-eye-slash");
+      });
+      //password conditions
+      function validate() {
+        var pass = document.getElementById("password");
+        var upper = document.getElementById("upper");
+        var lower = document.getElementById("lower");
+        var num = document.getElementById("number");
+        var len = document.getElementById("length");
+        var sp_char = document.getElementById("special_char");
+
+        //Check if password value contain a number
+        if (pass.value.match(/[0-9]/)) {
+          num.style.color = "green";
+        } else {
+          num.style.color = "red";
+        }
+
+        //Check if the password contain uppercase
+        if (pass.value.match(/[A-Z]/)) {
+          upper.style.color = "green";
+        } else {
+          upper.style.color = "red";
+        }
+
+        //Check if the password contain lowercase
+        if (pass.value.match(/[a-z]/)) {
+          lower.style.color = "green";
+        } else {
+          lower.style.color = "red";
+        }
+
+        //Check if the password contain a special character
+        if (pass.value.match(/[!\@\#\$\%\^\&\*\(\)\-\+\=\?\<\,\.\{\}\[\]\|]/)) {
+          sp_char.style.color = "green";
+        } else {
+          sp_char.style.color = "red";
+        }
+
+        //Check if password characters eceeds 8
+        if (pass.value.length < 8) {
+          len.style.color = "red";
+        } else {
+          len.style.color = "green";
+        }
+      }
+      function conform() {
+        var pass = document.getElementById("password");
+        var pass2 = document.getElementById("conpassword");
+      }
+      if (pass.vaue == pass2.value) {
+        document.getElementById("number").style.display = "none";
+        document.getElementById("length").style.display = "none";
+        document.getElementById("special_char").style.display = "none";
+        document.getElementById("upper").style.display = "none";
+        document.getElementById("lower").style.display = "none";
+      } else {
+        document.getElementById("number").style.display = "block";
+        document.getElementById("length").style.display = "block";
+        document.getElementById("special_char").style.display = "block";
+        document.getElementById("upper").style.display = "block";
+        document.getElementById("lower").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
